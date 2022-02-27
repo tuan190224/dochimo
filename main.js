@@ -629,14 +629,14 @@ fetch('https://fakestoreapi.com/products')
                 }
 
                 btnExit.onclick = () => {
-                    mainWrapper.classList.remove('animation2')
                     mainWrapper.classList.add('animation1')
+                    mainWrapper.classList.remove('animation2')
+                    home_item.classList.add('animation2')
                     setTimeout(() => {
                         mainWrapper.classList.add('disabled', 'animation2')
                         mainWrapper.classList.remove('animation1')
                     }, 900)
                     setTimeout(() => {
-                        home_item.classList.add('animation2')
                         home_item.classList.remove('disabled', 'animation1')
                     }, 1000)
                     setTimeout(() => {

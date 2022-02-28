@@ -545,7 +545,10 @@ fetch('https://fakestoreapi.com/products')
                         var k = imgHeader.classList[key] === 'disabled'
                     }
                     if (!k) {
+                        //imgHeader.classList.add('animation6')
+                        //setTimeout(() => {
                         imgHeader.classList.add('disabled')
+                        //}, 1000)
                     }
                     // if (!imgHeader.classList.some((img) => (img = 'disabled'))) {
                     // } else {
@@ -587,11 +590,14 @@ fetch('https://fakestoreapi.com/products')
                     Category = ''
                     //home_item.removeAttr('style') // xoa style da them
                     home_item.style.marginTop = ''
-                    imgHeader.classList.remove('disabled')
                     Home.classList.add('active')
                     removeClassActive()
                     app.render()
                     btnExit.click()
+
+                    // setTimeout(() => {
+                    //     imgHeader.classList.remove('disabled')
+                    // }, 1200)
                 }
 
                 // ------cart ---
@@ -646,7 +652,14 @@ fetch('https://fakestoreapi.com/products')
                     home_item_style_img_disabled()
                 }
                 //--------------------------//
-                closeAddressBtn.onclick = () => {}
+                closeAddressBtn.onclick = () => {
+                    cart.click()
+                    checkAddress.classList.add('animation5')
+                    checkAddress.classList.remove('animation3')
+                    setTimeout(() => {
+                        checkAddress.classList.add('disabled')
+                    }, 900)
+                }
             },
 
             start: function () {

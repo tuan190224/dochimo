@@ -105,6 +105,9 @@ body{
 .btn-primary{
     max-width:  150px;
 }
+.imgHeader{
+    position: relative;
+}
 .active-item{
     /* z-index: 1;
     position: fixed; */
@@ -309,7 +312,7 @@ body{
       display: none;
   }
 
-  /*  */
+  /* up */
 .animation4{
     animation-name: example4;
     animation-duration: 2s;
@@ -322,8 +325,30 @@ body{
     100% { top:0px} 
   }
 
-
-
+/* <---[]⇐*/
+.animation5{
+    animation-name: example5;
+    animation-duration: 2s;
+    
+  }
+  
+@keyframes example5 {
+    0%   {right: 0%; }
+    
+    100% { right: 100%;} 
+  }
+/* ⇑⇑ */
+.animation6{
+    animation-name: example6;
+    animation-duration: 2s;
+    
+  }
+  
+@keyframes example6 {
+    0%   {top: 100%; }
+    
+    100% { top:-50%} 
+  }
 
 
 

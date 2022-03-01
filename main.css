@@ -383,3 +383,9 @@ body{
     display: none;
     
 }
+
+/*  */
+.invalid , .invalid input, .invalid span{
+    color:red;
+    border-color: red;
+}

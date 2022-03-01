@@ -43,10 +43,6 @@ var footer = $('.footer')
 imgHeader.style.marginTop = navbar.scrollHeight + 'px'
 mainWrapper.style.marginTop = navbar.scrollHeight + 'px'
 checkAddress.style.marginTop = navbar.scrollHeight + 'px'
-//console.log(navbar.scrollHeight)
-
-////localStorage.setItem(APP_STORAGE, JSON.stringify([{ tuan: 26 }]))
-//console.log(localStorage)
 
 fetch('https://fakestoreapi.com/products')
     .then((res) => res.json())
@@ -464,16 +460,6 @@ fetch('https://fakestoreapi.com/products')
                         app.cartItems.push({ id: NewProduct, sl: 1 })
                         localStorage.setItem(APP_STORAGE, JSON.stringify({ cartItems: app.cartItems }))
                     }
-                    //console.log(app.cartItems)
-                    // if (CheckProduct) {
-                    //     app.cartItems[CheckProduct].sl += 1
-                    //     console.log(app.cartItems[CheckProduct])
-                    // } else {
-                    //     app.cartItems.push({ id: NewProduct, sl: 1 })
-                    //     console.log(app.cartItems)
-                    // }
-                    // //console.log(app.cartItems)
-                    // positionAbsolute.textContent = app.cartItems.length
                 }
                 // click product
                 HomeItem.onclick = (e) => {
@@ -495,9 +481,10 @@ fetch('https://fakestoreapi.com/products')
 
                 leftContainer.onclick = (e) => {
                     const delBtn = e.target.closest('.del-bt')
-                    const delID = delBtn.dataset.index
-                    console.log(delID)
+
                     if (delBtn) {
+                        const delID = delBtn.dataset.index
+                        //console.log(delID)
                         app.cartItems.forEach((item, index) => {
                             if (item.id === Number(delID)) {
                                 app.cartItems.splice(index, 1) // xoa pt
@@ -550,10 +537,6 @@ fetch('https://fakestoreapi.com/products')
                         imgHeader.classList.add('disabled')
                         //}, 1000)
                     }
-                    // if (!imgHeader.classList.some((img) => (img = 'disabled'))) {
-                    // } else {
-                    //     imgHeader.classList.add('disabled')
-                    // }
                 }
                 //-------------------------------//
 
@@ -604,7 +587,7 @@ fetch('https://fakestoreapi.com/products')
                 cart.onclick = (e) => {
                     imgHeader.classList.add('disabled')
                     home_item.classList.add('animation1')
-                    setInterval(() => footer.classList.add('disabled'), 2000)
+
                     setTimeout(() => {
                         home_item.classList.add('disabled')
                         home_item.classList.remove('animation1')
@@ -618,9 +601,6 @@ fetch('https://fakestoreapi.com/products')
                         //mainWrapper.classList.remove('animation4')
                     }, 3500)
 
-                    // setTimeout(() => {
-                    //     mainWrapper.classList.add('animation2')
-                    // }, 3000)
                     app.cartRender()
                 }
 
@@ -657,9 +637,12 @@ fetch('https://fakestoreapi.com/products')
                     checkAddress.classList.add('animation5')
                     checkAddress.classList.remove('animation3')
                     setTimeout(() => {
-                        checkAddress.classList.add('disabled')
+                        checkAddress.classList.add('animation3', 'disabled')
+                        checkAddress.classList.remove('animation5')
                     }, 900)
                 }
+
+                // ---------------------
             },
 
             start: function () {

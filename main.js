@@ -44,11 +44,17 @@ imgHeader.style.marginTop = navbar.scrollHeight + 'px'
 mainWrapper.style.marginTop = navbar.scrollHeight + 'px'
 checkAddress.style.marginTop = navbar.scrollHeight + 'px'
 
+// ---------------------
+
+// --------------------
+
 fetch('https://fakestoreapi.com/products')
     .then((res) => res.json())
     .then((json) => {
         console.log(json)
+        // -------------------------
 
+        // -------------------------
         var app = {
             items: json,
             configStorage: JSON.parse(localStorage.getItem(APP_STORAGE)) || {},
@@ -585,23 +591,25 @@ fetch('https://fakestoreapi.com/products')
 
                 // ------cart ---
                 cart.onclick = (e) => {
-                    imgHeader.classList.add('disabled')
-                    home_item.classList.add('animation1')
+                    if (app.cartItems.length > 0) {
+                        imgHeader.classList.add('disabled')
+                        home_item.classList.add('animation1')
 
-                    setTimeout(() => {
-                        home_item.classList.add('disabled')
-                        home_item.classList.remove('animation1')
-                    }, 900)
-                    setTimeout(() => {
-                        mainWrapper.classList.remove('disabled')
-                        // mainWrapper.classList.add('animation4')
-                    }, 500)
-                    setTimeout(() => {}, 2000)
-                    setTimeout(() => {
-                        //mainWrapper.classList.remove('animation4')
-                    }, 3500)
+                        setTimeout(() => {
+                            home_item.classList.add('disabled')
+                            home_item.classList.remove('animation1')
+                        }, 900)
+                        setTimeout(() => {
+                            mainWrapper.classList.remove('disabled')
+                            // mainWrapper.classList.add('animation4')
+                        }, 500)
+                        setTimeout(() => {}, 2000)
+                        setTimeout(() => {
+                            //mainWrapper.classList.remove('animation4')
+                        }, 3500)
 
-                    app.cartRender()
+                        app.cartRender()
+                    }
                 }
 
                 btnOderConfirm.onclick = () => {
@@ -646,15 +654,16 @@ fetch('https://fakestoreapi.com/products')
             },
 
             start: function () {
-                // setTimeout(() => {
-                //     Home.click
-                // }, 2000)
-                this.LoadedLocalStorage()
-                this.render()
+                setTimeout(() => {
+                    this.render()
+                }, 3000)
                 this.cartRender()
+                this.LoadedLocalStorage()
                 this.handleEvents()
             },
         }
 
         app.start()
     })
+
+// ---------------------

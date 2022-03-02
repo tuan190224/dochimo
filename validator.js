@@ -4,7 +4,23 @@ function validator(options) {
 
     fromElement.onsubmit = (submit) => {
         submit.preventDefault()
-        document.querySelector('.mess-success').classList.remove('disabled')
+
+        var element = document.querySelector('.progress-bar-striped')
+        var width = 1
+        const id = setInterval(frame, 0)
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id)
+                localStorage.setItem(APP_STORAGE, JSON.stringify({ cartItems: [] }))
+                document.querySelector('.mess-success').classList.remove('disabled')
+                setTimeout(() => {
+                    location.reload()
+                }, 1000)
+            } else {
+                width++
+                element.style.width = width + '%'
+            }
+        }
     }
 
     function validate(inputElement, rule) {
@@ -73,3 +89,12 @@ validator.isAddress = (selector) => {
         },
     }
 }
+// fetch('https://fakestoreapi.com/auth/login', {
+//     method: 'POST',
+//     body: JSON.stringify({
+//         username: 'kevinryan',
+//         password: 'kev02937@',
+//     }),
+// })
+//     .then((res) => res.json())
+//     .then((json) => console.log(json))

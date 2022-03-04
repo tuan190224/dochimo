@@ -26,6 +26,7 @@ function validator(options) {
                 options.onSubmit(enableValue)
                 //
                 var element = document.querySelector('.progress-bar-striped')
+
                 var width = 1
                 const id = setInterval(frame, 0)
                 function frame() {
@@ -33,9 +34,16 @@ function validator(options) {
                         clearInterval(id)
                         localStorage.setItem(APP_STORAGE, JSON.stringify({ cartItems: [], user: enableValue }))
                         document.querySelector('.mess-success').classList.remove('disabled')
-                        setTimeout(() => {
-                            //location.reload()
+                        var countdown = document.querySelector('.alert-success h1 .countdown')
+                        var i = 5
+                        setInterval(() => {
+                            countdown.innerText = i--
                         }, 1000)
+                        setTimeout(() => {
+                            var i = 5
+
+                            location.reload()
+                        }, 6000)
                     } else {
                         width++
                         element.style.width = width + '%'

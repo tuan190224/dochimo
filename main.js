@@ -220,7 +220,7 @@ fetch('https://fakestoreapi.com/products')
                                             1
                                         )} vnd</del>
                                 </p>
-                                <a href="" class="btn btn-primary " data-index="${item.id}" >Mua ngay</a>
+                                <a href="" class="btn btn-primary " data-index="${item.id}" >Thêm vào giỏ</a>
                             </div>
                         </div>
                         `
@@ -370,7 +370,7 @@ fetch('https://fakestoreapi.com/products')
                                             1
                                         )} vnd</del>
                                 </p>
-                                <a href="#" class="btn btn-primary " data-index="${item.id}" >Mua ngay</a>
+                                <a href="#" class="btn btn-primary " data-index="${item.id}" >Thêm vào giỏ</a>
                             </div>
                         </div>
                         `

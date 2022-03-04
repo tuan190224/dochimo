@@ -30,8 +30,13 @@ body{
 .d-flex input{
     max-width:800px
 }
+.navbar-nav .nav-link {
+    padding-right: 10px;
+    padding-left: 10px;
+}
 .nav-item>a, .dropdown-menu>li{
     margin: 0 10px 0 10px;
+    
 }
 .nav-item>a:hover , .nav-item ul {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -272,7 +277,7 @@ body{
     padding-top: 10px;
 }
 .position-relative{
-    margin: auto;
+    
 }
 /* ra */
 .animation1{

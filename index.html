@@ -27,7 +27,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px; width: 100%;
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100%; width: 100%;
           justify-content: flex-end;">
             <li class="nav-item">
               <a class="nav-link active Home" aria-current="page" href="">Home</a>
@@ -62,7 +62,8 @@
               <span></span>
             </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style="display: flex; flex-direction: row; justify-content: flex-start;">
+              <a class="nav-link user"> 
               <div class="position-relative cart">
                 
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" fill="currentColor"
@@ -77,6 +78,7 @@
                   </svg>
                 
               </div>
+              </a>
             </li>
           </ul>
           <form class="d-flex">

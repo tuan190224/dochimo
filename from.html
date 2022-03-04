@@ -91,7 +91,7 @@
   <form class="row g-3 col-sm-6 " id="form1">
     <div  class="col-md-12">
       <span class="form-label">Họ và tên </span>
-      <input type="text" id="FirstName" aria-label="First name" class="form-control">
+      <input type="text" id="FirstName" name="fullName" aria-label="First name" class="form-control">
       <!-- <input type="text" aria-label="Last name" class="form-control"> -->
       <span class="mess"></span>
     </div>
@@ -99,22 +99,22 @@
     
     <div class="col-md-12">
       <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" id="Email" class="form-control" id="inputEmail4">
+      <input type="email" id="Email" name="Email" class="form-control" id="inputEmail4">
       <span class="mess"></span>
     </div>
     <div class="col-md-12">
       <label for="inputPhone" class="form-label">Số Điện thoại</label>
-      <input class="form-control" id="inputNumber" type="text">
+      <input class="form-control" id="inputNumber" name="Phone" type="text">
       <span class="mess"></span>
     </div>
     <div class="col-12">
       <label for="inputAddress" class="form-label">Địa chỉ </label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+      <input type="text" class="form-control" id="inputAddress" name="Address" placeholder="1234 Main St">
       <span class="mess"></span>
     </div>
     <div class="col-12">
       <label for="inputAddress2" class="form-label">Địa chỉ chi tiết </label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+      <input type="text" class="form-control" id="inputAddress2" name="Address2" placeholder="Apartment, studio, or floor">
       <span class="mess"></span>
     </div>
     
@@ -321,7 +321,10 @@
       validator.isEmail('#Email'),
       validator.isPhoneNumber('#inputNumber'),
       validator.isAddress('#inputAddress'),
-      ]
+      ],
+      onSubmit: function (data) {
+        console.log(data)
+      }
     })
     validator({
       form:'#form2',
@@ -331,7 +334,10 @@
       validator.isEmail('#Email'),
       validator.isPhoneNumber('#inputNumber'),
       validator.isAddress('#inputAddress'),
-      ]
+      ],
+      onSubmit: function (data) {
+        console.log(data)
+      }
     })
   </script>
 

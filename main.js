@@ -20,6 +20,7 @@ const navbar = $('.navbar')
 const imgHeader = $('.imgHeader')
 const card = $('.card')
 const electronics = $('.electronics')
+const user = $('.user>span')
 const Mens = $('.Mens')
 const Women = $('.Women')
 const Home = $('.Home')
@@ -31,6 +32,11 @@ const btnOderConfirm = $('.btn-oder-confirm')
 // checkAddress
 const checkAddress = $('.check-address')
 const closeAddressBtn = $('.close-ck-address')
+const userName = $('#fullName')
+const email = $('#Email')
+const phoneNumber = $('#inputNumber')
+const address = $('#inputAddress')
+const address2 = $('#inputAddress2')
 
 const leftContainer = $('.leftContainer')
 const rightText = $('.right-text')
@@ -59,9 +65,11 @@ fetch('https://fakestoreapi.com/products')
             items: json,
             configStorage: JSON.parse(localStorage.getItem(APP_STORAGE)) || {},
             cartItems: [],
+            User: {},
             LoadedLocalStorage: function () {
                 app.cartItems = app.configStorage.cartItems || []
-                console.log()
+                app.User = app.configStorage.user || {}
+                console.log(app.User.fullName)
             },
 
             render: function () {
@@ -436,6 +444,15 @@ fetch('https://fakestoreapi.com/products')
                 })
             },
 
+            UserAdd: function () {
+                user.innerText = app.User.fullName === undefined ? '' : app.User.fullName
+                userName.value = this.User.fullName === undefined ? '' : this.User.fullName
+                email.value = this.User.Email === undefined ? '' : this.User.Email
+                phoneNumber.value = this.User.Phone === undefined ? '' : this.User.Phone
+                address.value = this.User.Address === undefined ? '' : this.User.Address
+                address2.value = this.User.Address2 === undefined ? '' : this.User.Address2
+            },
+
             handleEvents: function () {
                 // preventDefault a
                 function stopOpeningURL(a) {
@@ -654,12 +671,13 @@ fetch('https://fakestoreapi.com/products')
             },
 
             start: function () {
+                this.LoadedLocalStorage()
+                this.handleEvents()
+                this.UserAdd()
+                this.cartRender()
                 setTimeout(() => {
                     this.render()
                 }, 3000)
-                this.cartRender()
-                this.LoadedLocalStorage()
-                this.handleEvents()
             },
         }
 

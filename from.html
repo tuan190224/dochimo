@@ -9,9 +9,102 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="cart.css">
   <link rel="stylesheet" href="main.css">
+  
   <title>Dochimo</title>
+  <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
+  <div class="headerMenu">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-">
+
+      <div class="container-fluid">
+        <div>
+          <img class="logo aaa" src="./img/Hotpot.png" alt="">
+        </div>
+        <!-- <a class="navbar-brand" href="#">Navbar scroll</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100%; width: 100%;
+          justify-content: flex-end;">
+            <li class="nav-item">
+              <a class="nav-link active Home" aria-current="page" href="">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link Mens" href="">Mens
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle Women" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Women
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="/wonen.html">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link electronics">electronics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link user"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+              <span></span>
+            </a>
+            </li>
+            <li class="nav-item" style="display: flex; flex-direction: row; justify-content: flex-start;">
+              <a class="nav-link user"> 
+              <div class="position-relative cart">
+                
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" fill="currentColor"
+                    class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                  </svg>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        
+                    
+                  </span>
+                  </svg>
+                
+              </div>
+              </a>
+            </li>
+            <div class="btn-add"></div>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+      <!-- <div class="position-relative">
+        <a class="cart" href="">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+            <path
+              d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+          </svg>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+            <span class="visually-hidden">unread messages</span>
+          </span>
+          </svg>
+        </a>
+      </div> -->
+    </nav>
+  </div>
 <div>
   <div class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
